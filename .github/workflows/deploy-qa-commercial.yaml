@@ -85,6 +85,7 @@ jobs:
           diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
 
       - name: Git reset.
+        run: |
           git reset --hard HEAD
           # Now we have the current cloud backend.
           diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
