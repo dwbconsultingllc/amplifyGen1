@@ -1,0 +1,149 @@
+name: Deploy to QA (Commercial) only.
+
+on:
+  pull_request:
+    types:
+      - opened          # When a pull request is created
+      - reopened        # When a pull request is reopened
+      - synchronize     # When a new commit is pushed to the pull request
+      - labeled         # When a label is added to the pull request
+      - unlabeled       # When a label is removed from the pull request
+      - edited          # When the pull request title or description is edited
+  #   paths:
+  #     - 'amplify/team-provider-info.json'
+  push:
+    branches:
+      - qa
+
+# Todo:
+# Update permissions for the role this workflow assumes
+# Test frontend deployment
+# Deploy backend resources
+
+# Amplify pull issue.
+# deal with charage returns.
+# deal with directory names getting renamed.
+
+jobs:
+  DeployFrontend:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    environment: qa
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Configure AWS credentials.
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::350141380063:role/Github-repo-amplifygen1
+          aws-region: us-west-2
+      - name: Build Frontend for QA Commercial
+        run: |
+          [ -d "build" ] && { echo "Directory 'build' exists. Build failed."; exit 1; } || echo "Directory 'build' does not exist. Build can proceed."
+          export AWS_REGION=us-west-2
+          npm i -g @aws-amplify/cli
+          amplify pull --yes \
+          --amplify "{\"envName\":\"qa\",\"appId\":\"d2gkl3jbi17ke1\"}" \
+          --providers "{\"awscloudformation\":{\"configLevel\":\"general\",\"useProfile\":false,\"accessKeyId\":\"$AWS_ACCESS_KEY_ID\",\"secretAccessKey\":\"$AWS_SECRET_ACCESS_KEY\",\"region\":\"$AWS_REGION\"}}"
+          amplify env list
+          npm ci
+          npm run build
+      # - uses: actions/upload-artifact@v4
+      #   with:
+      #     name: hosting-artifact
+      #     path: |
+      #       build*
+      - name: Deploy Frontend to QA Commercial
+        run: |
+          echo "Deploying Frontend to QA Commercial"
+          aws s3 sync ./build s3://consentondemand-hosting-qa/ --dryrun --delete
+          aws cloudfront create-invalidation --distribution-id EBPBMOI35LVK1  --paths "/*" --region us-east-1
+
+  DeployBackend:
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: read
+    environment: qa
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Configure AWS credentials.
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::350141380063:role/Github-repo-amplifygen1
+          aws-region: us-west-2
+      - name: Deploy Backend to QA Commercial
+        run: |
+          aws sts get-caller-identity
+          echo "Deploying to QA Commercial"
+          export AWS_REGION=us-west-2
+          npm i -g @aws-amplify/cli
+          amplify pull --yes \
+          --amplify "{\"envName\":\"qa\",\"appId\":\"d2gkl3jbi17ke1\"}" \
+          --providers "{\"awscloudformation\":{\"configLevel\":\"general\",\"useProfile\":false,\"accessKeyId\":\"$AWS_ACCESS_KEY_ID\",\"secretAccessKey\":\"$AWS_SECRET_ACCESS_KEY\",\"region\":\"$AWS_REGION\"}}"
+          diff -r  amplify/\#current-cloud-backend/awscloudformation/ amplify/backend/awscloudformation/ && echo "No cloudformation changes detected"
+
+
+  CheckProviderForModifications:
+    if: false # Disabled for now
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch full history to access all branches
+
+      - name: Check for modifications to team-provider-info.json
+        id: check_changes
+        run: |
+          echo "Pull request branch is: ${{ github.head_ref }}"
+          echo "Base branch is: ${{ github.event.pull_request.base.ref }}"
+
+          git fetch origin ${{ github.event.pull_request.base.ref }}
+          git fetch origin ${{ github.head_ref }}
+          git checkout ${{ github.head_ref }}
+
+          # Check for modifications to the specific file
+          if git diff --name-only origin/${{ github.event.pull_request.base.ref }}...${{ github.head_ref }} | grep 'amplify/team-provider-info.json'; then
+            echo "team-provider-info.json has been modified."
+            echo "file-modified=true" >> $GITHUB_ENV
+          else
+            echo "team-provider-info.json has NOT been modified."
+            echo "file-modified=false" >> $GITHUB_ENV
+          fi
+
+      - name: Check for specific label
+        if: env.file-modified == 'true'
+        id: check_label
+        run: |
+          echo "Checking for specific labels on the pull request..."
+          allow_modifications=false
+
+          # Convert the labels JSON to a format we can work with
+          labels=$(echo '${{ toJson(github.event.pull_request.labels) }}' | jq -r '.[].name')
+          echo "Labels found: $labels"
+
+          # Check if 'allow-modifications' label is present
+          for label in $labels; do
+            if [[ "$label" == "allow-modifications" ]]; then
+              allow_modifications=true
+              break
+            fi
+          done
+
+          if [ "$allow_modifications" = true ]; then
+            echo "Label 'allow-modifications' is present."
+            echo "allow-modifications=true" >> $GITHUB_ENV
+          else
+            echo "Label 'allow-modifications' is NOT present."
+            echo "allow-modifications=false" >> $GITHUB_ENV
+          fi
+
+      - name: "Fail if team-provider-info.json was modified and no specific label is present"
+        if: env.file-modified == 'true' && env.allow-modifications == 'false'
+        run: |
+          echo "Error: Modifications to team-provider-info.json are not allowed without the 'allow-modifications' label."
+          exit 1
