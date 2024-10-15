@@ -1,5 +1,12 @@
 export type AmplifyDependentResourcesAttributes = {
   "function": {
+    "amplifygen1fc0da326": {
+      "Arn": "string",
+      "LambdaExecutionRole": "string",
+      "LambdaExecutionRoleArn": "string",
+      "Name": "string",
+      "Region": "string"
+    },
     "test": {
       "Arn": "string",
       "LambdaExecutionRole": "string",
