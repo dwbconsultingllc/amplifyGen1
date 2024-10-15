@@ -8,6 +8,11 @@ on:
     branches:
       - qa
 
+concurrency:
+  group: ci-cd-${{ github.ref }}
+  cancel-in-progress: true  # Automatically cancels previous runs for the same branch
+
+
 # Todo:
 # Update permissions for the role this workflow assumes
 # Test frontend deployment
