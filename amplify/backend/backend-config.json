@@ -1,4 +1,11 @@
 {
+  "function": {
+    "amplifygen1fc0da326": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
   "hosting": {
     "S3AndCloudFront": {
       "providerPlugin": "awscloudformation",

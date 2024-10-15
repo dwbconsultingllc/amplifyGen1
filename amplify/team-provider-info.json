@@ -35,6 +35,9 @@
     "categories": {
       "hosting": {
         "S3AndCloudFront": {}
+      },
+      "function": {
+        "amplifygen1fc0da326": {}
       }
     }
   }
