@@ -83,7 +83,9 @@ jobs:
           amplify pull --yes \
           --amplify "{\"envName\":\"qa\",\"appId\":\"d2gkl3jbi17ke1\"}" \
           --providers "{\"awscloudformation\":{\"configLevel\":\"general\",\"useProfile\":false,\"accessKeyId\":\"$AWS_ACCESS_KEY_ID\",\"secretAccessKey\":\"$AWS_SECRET_ACCESS_KEY\",\"region\":\"$AWS_REGION\"}}"
+
           diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
+
           git reset --hard HEAD
           diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
 
@@ -92,7 +94,7 @@ jobs:
         run: |
           echo "Deploying backend to QA using downloaded artifact..."
           diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
-          amplify push --yes --force
+          amplify publish --yes --force
 
 
 

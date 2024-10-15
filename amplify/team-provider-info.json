@@ -37,7 +37,11 @@
         "S3AndCloudFront": {}
       },
       "function": {
-        "amplifygen1fc0da326": {}
+        "amplifygen1fc0da326": {},
+        "test": {
+          "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
+          "s3Key": "amplify-builds/test-713856564633546c7133-build.zip"
+        }
       }
     }
   }
