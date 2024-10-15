@@ -8,11 +8,6 @@ on:
     branches:
       - qa
 
-concurrency:
-  group: ci-cd-${{ github.ref }}
-  cancel-in-progress: true  # Automatically cancels previous runs for the same branch
-
-
 # Todo:
 # Update permissions for the role this workflow assumes
 # Test frontend deployment
@@ -70,71 +65,34 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Configure AWS credentials.
-        uses: aws-actions/configure-aws-credentials@v4
-        with:
-          role-to-assume: arn:aws:iam::350141380063:role/Github-repo-amplifygen1
-          aws-region: us-west-2
-
-      - name: Install AWS Amplify CLI
-        run: npm i -g @aws-amplify/cli
-
-      - name: Pull Amplify environment
-        run: |
-          amplify pull --yes \
-          --amplify "{\"envName\":\"qa\",\"appId\":\"d2gkl3jbi17ke1\"}" \
-          --providers "{\"awscloudformation\":{\"configLevel\":\"general\",\"useProfile\":false,\"accessKeyId\":\"$AWS_ACCESS_KEY_ID\",\"secretAccessKey\":\"$AWS_SECRET_ACCESS_KEY\",\"region\":\"$AWS_REGION\"}}"
-
-      - name: Check Backend to QA Commercial
-        run: |
-          EVENT_NAME="${{ github.event_name }}"
-          BRANCH_NAME="${{ github.ref }}"
-          DEPLOY_BRANCH="refs/heads/qa"
-
-          aws sts get-caller-identity
-          echo "Deploying to QA Commercial"
-          
-          if [[ "$EVENT_NAME" == "pull_request" ]]; then
-            echo "Pull request event detected. Preparing backend..."
-            diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Uploading artifact."
-          fi
-
-      - name: Upload Amplify Artifact (PR only)
-        if: github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
-        with:
-          name: Amplify 
-          path: . # Specify your artifact path here
-
-  qa_deploy:
-    needs: pr_backend_deploy
-    runs-on: ubuntu-latest
-    permissions:
-      id-token: write
-      contents: read
-    environment: qa
-    if: github.event_name == 'push' && github.ref == 'refs/heads/qa'
-    steps:
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::350141380063:role/Github-repo-amplifygen1
           aws-region: us-west-2
 
-      - name: Download Amplify Artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: Amplify
-          path: .
-
       - name: Install AWS Amplify CLI
         run: npm i -g @aws-amplify/cli
 
-      - name: Deploy to QA Commercial
-        run: |
-          echo "Deploying backend to QA using artifact..."
-          amplify push --yes --force
 
+
+      - name: Pull Amplify environment
+        run: |
+          diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
+
+          amplify pull --yes \
+          --amplify "{\"envName\":\"qa\",\"appId\":\"d2gkl3jbi17ke1\"}" \
+          --providers "{\"awscloudformation\":{\"configLevel\":\"general\",\"useProfile\":false,\"accessKeyId\":\"$AWS_ACCESS_KEY_ID\",\"secretAccessKey\":\"$AWS_SECRET_ACCESS_KEY\",\"region\":\"$AWS_REGION\"}}"
+          diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
+          git reset --hard HEAD
+          diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
+
+      - name: Deploy to QA (Only on Push)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/qa'
+        run: |
+          echo "Deploying backend to QA using downloaded artifact..."
+          diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
+          amplify push --yes --force
 
 
 
