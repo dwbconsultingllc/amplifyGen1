@@ -95,6 +95,7 @@ jobs:
         run: |
           echo "Deploying backend to QA using downloaded artifact..."
           diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
+          npm ci
           amplify publish --yes --force
 
 
