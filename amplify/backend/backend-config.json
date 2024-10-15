@@ -18,6 +18,22 @@
     }
   },
   "parameters": {
+    "AMPLIFY_function_amplifygen1fc0da326_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifygen1fc0da326"
+        }
+      ]
+    },
+    "AMPLIFY_function_amplifygen1fc0da326_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "amplifygen1fc0da326"
+        }
+      ]
+    },
     "AMPLIFY_function_test_deploymentBucketName": {
       "usedBy": [
         {
