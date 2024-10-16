@@ -81,19 +81,18 @@ jobs:
           --amplify "{\"envName\":\"qa\",\"appId\":\"d2gkl3jbi17ke1\"}" \
           --providers "{\"awscloudformation\":{\"configLevel\":\"general\",\"useProfile\":false,\"accessKeyId\":\"$AWS_ACCESS_KEY_ID\",\"secretAccessKey\":\"$AWS_SECRET_ACCESS_KEY\",\"region\":\"$AWS_REGION\"}}"
 
-          diff -r amplify/\#current-cloud-backend amplify/backend --exclude="amplify-meta.json" || echo "CloudFormation changes detected. Creating artifact."
+          diff -r amplify/\#current-cloud-backend amplify/backend --exclude="amplify-meta.json" || echo "CloudFormation changes detected."
 
       - name: Git reset.
         run: |
           # Reset the changes made by amplify pull.
           git reset --hard HEAD 
-          diff -r amplify/\#current-cloud-backend amplify/backend --exclude="amplify-meta.json" || echo "CloudFormation changes detected. Creating artifact."
+          diff -r amplify/\#current-cloud-backend amplify/backend --exclude="amplify-meta.json" || echo "CloudFormation changes detected."
 
       - name: Deploy to QA (Only on Push)
         if: github.event_name == 'push' && github.ref == 'refs/heads/qa'
         run: |
           echo "Deploying backend/frontend to QA using downloaded artifact..."
-          diff -r amplify/\#current-cloud-backend amplify/backend --exclude="amplify-meta.json" || echo "CloudFormation changes detected. Creating artifact."
           npm ci
           amplify publish --yes --force
 
