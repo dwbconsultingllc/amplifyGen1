@@ -74,8 +74,6 @@ jobs:
       - name: Install AWS Amplify CLI
         run: npm i -g @aws-amplify/cli
 
-
-
       - name: Pull Amplify environment
         run: |
           git branch -v
@@ -98,7 +96,6 @@ jobs:
           diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
           npm ci
           amplify publish --yes --force
-
 
 
   CheckProviderForModifications:
