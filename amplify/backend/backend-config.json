@@ -1,5 +1,10 @@
 {
   "function": {
+    "amplifygen1bd9cd3c7": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "amplifygen1fc0da326": {
       "build": true,
       "providerPlugin": "awscloudformation",
