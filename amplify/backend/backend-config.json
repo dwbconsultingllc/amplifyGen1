@@ -10,6 +10,11 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "featureD": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "test": {
       "build": true,
       "providerPlugin": "awscloudformation",
