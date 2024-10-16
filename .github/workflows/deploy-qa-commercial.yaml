@@ -81,7 +81,7 @@ jobs:
           --amplify "{\"envName\":\"qa\",\"appId\":\"d2gkl3jbi17ke1\"}" \
           --providers "{\"awscloudformation\":{\"configLevel\":\"general\",\"useProfile\":false,\"accessKeyId\":\"$AWS_ACCESS_KEY_ID\",\"secretAccessKey\":\"$AWS_SECRET_ACCESS_KEY\",\"region\":\"$AWS_REGION\"}}"
 
-          diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
+          diff -r amplify/\#current-cloud-backend amplify/backend --exclude="amplify-meta.json" || echo "CloudFormation changes detected. Creating artifact."
 
       - name: Git reset.
         run: |
