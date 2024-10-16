@@ -87,13 +87,13 @@ jobs:
         run: |
           git reset --hard HEAD
           # Now we have the current cloud backend.
-          diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
+          diff -r amplify/\#current-cloud-backend amplify/backend --exclude="amplify-meta.json" || echo "CloudFormation changes detected. Creating artifact."
 
       - name: Deploy to QA (Only on Push)
         if: github.event_name == 'push' && github.ref == 'refs/heads/qa'
         run: |
           echo "Deploying backend to QA using downloaded artifact..."
-          diff -r amplify/\#current-cloud-backend amplify/backend || echo "CloudFormation changes detected. Creating artifact."
+          diff -r amplify/\#current-cloud-backend amplify/backend --exclude="amplify-meta.json" || echo "CloudFormation changes detected. Creating artifact."
           npm ci
           amplify publish --yes --force
 
