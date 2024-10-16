@@ -21,4 +21,5 @@ amplifytools.xcconfig
 
 amplify/team-provider-info.json
 amplify/backend/awscloudformation/**
+amplify/backend/backend-config.json
 #amplify-do-not-edit-end
