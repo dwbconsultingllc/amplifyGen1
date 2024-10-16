@@ -39,11 +39,15 @@
       "function": {
         "amplifygen1fc0da326": {
           "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
-          "s3Key": "amplify-builds/amplifygen1fc0da326-48515575366d6445346c-build.zip"
+          "s3Key": "amplify-builds/amplifygen1fc0da326-5334343168432f495271-build.zip"
         },
         "test": {
           "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
           "s3Key": "amplify-builds/test-713856564633546c7133-build.zip"
+        },
+        "featureC": {
+          "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
+          "s3Key": "amplify-builds/featureC-70476f69476d31523968-build.zip"
         }
       }
     }
