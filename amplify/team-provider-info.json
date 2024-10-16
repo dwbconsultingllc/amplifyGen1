@@ -20,19 +20,12 @@
         "featureC": {
           "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
           "s3Key": "amplify-builds/featureC-70476f69476d31523968-build.zip"
-
-
         },
         "test": {
           "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
           "s3Key": "amplify-builds/test-713856564633546c7133-build.zip"
         },
         "featureD": {}
-
-        "featureC": {
-          "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
-          "s3Key": "amplify-builds/featureC-70476f69476d31523968-build.zip"
-        }
       }
     }
   },
