@@ -59,6 +59,22 @@
         }
       ]
     },
+    "AMPLIFY_function_featA_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "featA"
+        }
+      ]
+    },
+    "AMPLIFY_function_featA_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "featA"
+        }
+      ]
+    },
     "AMPLIFY_function_featureC_deploymentBucketName": {
       "usedBy": [
         {
