@@ -80,6 +80,22 @@
         }
       ]
     },
+    "AMPLIFY_function_featB_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "featB"
+        }
+      ]
+    },
+    "AMPLIFY_function_featB_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "featB"
+        }
+      ]
+    },
     "AMPLIFY_function_featureC_deploymentBucketName": {
       "usedBy": [
         {
