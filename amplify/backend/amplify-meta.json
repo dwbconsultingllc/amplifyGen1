@@ -220,6 +220,11 @@
         "LambdaExecutionRole": "amplifygen1LambdaRole1a3d4295-qa"
       },
       "lastPushDirHash": "i0lr9qxSkJRaauMuv+qSrC/qDCA="
+    },
+    "featC": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "hosting": {
