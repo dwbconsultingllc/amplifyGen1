@@ -24,7 +24,7 @@
         "Name": "amplifygen1fc0da326-qa",
         "LambdaExecutionRole": "amplifygen1LambdaRole70bcb06b-qa"
       },
-      "lastPushTimeStamp": "2024-10-17T00:36:59.430Z",
+      "lastPushTimeStamp": "2024-10-17T00:53:47.938Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/amplifygen1fc0da326-cloudformation-template.json",
         "logicalId": "functionamplifygen1fc0da326"
@@ -33,9 +33,9 @@
         "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
         "s3Key": "amplify-builds/amplifygen1fc0da326-5334343168432f495271-build.zip"
       },
-      "lastBuildTimeStamp": "2024-10-17T00:30:23.427Z",
+      "lastBuildTimeStamp": "2024-10-17T00:51:44.105Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2024-10-17T00:30:23.448Z",
+      "lastPackageTimeStamp": "2024-10-17T00:51:44.127Z",
       "distZipFilename": "amplifygen1fc0da326-5334343168432f495271-build.zip",
       "lastPushDirHash": "psiVr+DOf7HpnopbNYZ5IriEbiY="
     },
@@ -50,7 +50,7 @@
         "Name": "featureC-qa",
         "LambdaExecutionRole": "amplifygen1LambdaRole35fab578-qa"
       },
-      "lastPushTimeStamp": "2024-10-17T00:36:59.436Z",
+      "lastPushTimeStamp": "2024-10-17T00:53:47.945Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/featureC-cloudformation-template.json",
         "logicalId": "functionfeatureC"
@@ -59,9 +59,9 @@
         "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
         "s3Key": "amplify-builds/featureC-70476f69476d31523968-build.zip"
       },
-      "lastBuildTimeStamp": "2024-10-17T00:30:24.158Z",
+      "lastBuildTimeStamp": "2024-10-17T00:51:44.793Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2024-10-17T00:30:24.178Z",
+      "lastPackageTimeStamp": "2024-10-17T00:51:44.893Z",
       "distZipFilename": "featureC-70476f69476d31523968-build.zip",
       "lastPushDirHash": "a5meR5er3gNZKY81MyXdP4+o/sc="
     },
@@ -76,7 +76,7 @@
         "Name": "featureD-qa",
         "LambdaExecutionRole": "amplifygen1LambdaRolef701f052-qa"
       },
-      "lastPushTimeStamp": "2024-10-17T00:36:59.438Z",
+      "lastPushTimeStamp": "2024-10-17T00:53:47.947Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/featureD-cloudformation-template.json",
         "logicalId": "functionfeatureD"
@@ -85,9 +85,9 @@
         "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
         "s3Key": "amplify-builds/featureD-465a536f3931456a6363-build.zip"
       },
-      "lastBuildTimeStamp": "2024-10-17T00:30:24.862Z",
+      "lastBuildTimeStamp": "2024-10-17T00:51:45.973Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2024-10-17T00:30:24.878Z",
+      "lastPackageTimeStamp": "2024-10-17T00:51:45.989Z",
       "distZipFilename": "featureD-465a536f3931456a6363-build.zip",
       "lastPushDirHash": "dzR55+aA/YJf5Ip3ulim2FP/gTk="
     },
@@ -102,14 +102,14 @@
         "Name": "newFeat-qa",
         "LambdaExecutionRole": "amplifygen1LambdaRolebdbe24af-qa"
       },
-      "lastPushTimeStamp": "2024-10-17T00:36:59.440Z",
+      "lastPushTimeStamp": "2024-10-17T00:53:47.949Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/newFeat-cloudformation-template.json",
         "logicalId": "functionnewFeat"
       },
-      "lastBuildTimeStamp": "2024-10-17T00:30:25.571Z",
+      "lastBuildTimeStamp": "2024-10-17T00:51:46.672Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2024-10-17T00:30:25.586Z",
+      "lastPackageTimeStamp": "2024-10-17T00:51:46.687Z",
       "distZipFilename": "newFeat-54674b6870624d58474c-build.zip",
       "s3Bucket": {
         "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
@@ -128,7 +128,7 @@
         "Name": "test-qa",
         "LambdaExecutionRole": "amplifygen1LambdaRoled7e46889-qa"
       },
-      "lastPushTimeStamp": "2024-10-17T00:36:59.441Z",
+      "lastPushTimeStamp": "2024-10-17T00:53:47.950Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/test-cloudformation-template.json",
         "logicalId": "functiontest"
@@ -137,9 +137,9 @@
         "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
         "s3Key": "amplify-builds/test-713856564633546c7133-build.zip"
       },
-      "lastBuildTimeStamp": "2024-10-17T00:30:26.305Z",
+      "lastBuildTimeStamp": "2024-10-17T00:51:47.231Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2024-10-17T00:30:26.319Z",
+      "lastPackageTimeStamp": "2024-10-17T00:51:47.245Z",
       "distZipFilename": "test-713856564633546c7133-build.zip",
       "lastPushDirHash": "2TaBfl+/WHHFMOrgxxjd2s9RFmE="
     },
@@ -147,9 +147,9 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
-      "lastBuildTimeStamp": "2024-10-17T00:30:27.041Z",
+      "lastBuildTimeStamp": "2024-10-17T00:51:47.839Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2024-10-17T00:30:27.055Z",
+      "lastPackageTimeStamp": "2024-10-17T00:51:47.851Z",
       "distZipFilename": "featureX-436965676d756c367070-build.zip",
       "s3Bucket": {
         "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
@@ -159,7 +159,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/featureX-cloudformation-template.json",
         "logicalId": "functionfeatureX"
       },
-      "lastPushTimeStamp": "2024-10-17T00:36:59.443Z",
+      "lastPushTimeStamp": "2024-10-17T00:53:47.952Z",
       "output": {
         "LambdaExecutionRoleArn": "arn:aws:iam::350141380063:role/amplifygen1LambdaRolea9bda182-qa",
         "Region": "us-west-2",
@@ -173,9 +173,9 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda",
-      "lastBuildTimeStamp": "2024-10-17T00:30:28.031Z",
+      "lastBuildTimeStamp": "2024-10-17T00:51:48.665Z",
       "lastBuildType": "PROD",
-      "lastPackageTimeStamp": "2024-10-17T00:30:28.046Z",
+      "lastPackageTimeStamp": "2024-10-17T00:51:48.675Z",
       "distZipFilename": "featA-6b38512b383275427445-build.zip",
       "s3Bucket": {
         "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
@@ -185,7 +185,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/featA-cloudformation-template.json",
         "logicalId": "functionfeatA"
       },
-      "lastPushTimeStamp": "2024-10-17T00:36:59.444Z",
+      "lastPushTimeStamp": "2024-10-17T00:53:47.953Z",
       "output": {
         "LambdaExecutionRoleArn": "arn:aws:iam::350141380063:role/amplifygen1LambdaRole2613df20-qa",
         "Region": "us-west-2",
@@ -196,6 +196,32 @@
       "lastPushDirHash": "JlGl0FLYg0WaGKCfAipmhlFyq1Q="
     },
     "featB": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2024-10-17T00:51:49.399Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2024-10-17T00:51:49.409Z",
+      "distZipFilename": "featB-4864422f546a44636533-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-amplifygen1-qa-8e5aa-deployment",
+        "s3Key": "amplify-builds/featB-4864422f546a44636533-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/featB-cloudformation-template.json",
+        "logicalId": "functionfeatB"
+      },
+      "lastPushTimeStamp": "2024-10-17T00:53:47.954Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::350141380063:role/amplifygen1LambdaRole1a3d4295-qa",
+        "Region": "us-west-2",
+        "Arn": "arn:aws:lambda:us-west-2:350141380063:function:featB-qa",
+        "Name": "featB-qa",
+        "LambdaExecutionRole": "amplifygen1LambdaRole1a3d4295-qa"
+      },
+      "lastPushDirHash": "i0lr9qxSkJRaauMuv+qSrC/qDCA="
+    },
+    "featC": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
@@ -215,7 +241,7 @@
         "HostingBucketName": "amplifyen1-20241015132641-hostingbucket-qa",
         "CloudFrontDomainName": "d2md5xxn836tu7.cloudfront.net"
       },
-      "lastPushTimeStamp": "2024-10-17T00:36:59.445Z",
+      "lastPushTimeStamp": "2024-10-17T00:53:47.955Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/hosting/template.json",
         "logicalId": "hostingS3AndCloudFront"
