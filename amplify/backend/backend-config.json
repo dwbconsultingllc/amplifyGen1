@@ -101,6 +101,22 @@
         }
       ]
     },
+    "AMPLIFY_function_featC_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "featC"
+        }
+      ]
+    },
+    "AMPLIFY_function_featC_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "featC"
+        }
+      ]
+    },
     "AMPLIFY_function_featureC_deploymentBucketName": {
       "usedBy": [
         {
