@@ -24,7 +24,7 @@
         "Name": "amplifygen1fc0da326-qa",
         "LambdaExecutionRole": "amplifygen1LambdaRole70bcb06b-qa"
       },
-      "lastPushTimeStamp": "2024-10-17T00:33:26.023Z",
+      "lastPushTimeStamp": "2024-10-17T00:36:59.430Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/amplifygen1fc0da326-cloudformation-template.json",
         "logicalId": "functionamplifygen1fc0da326"
@@ -50,7 +50,7 @@
         "Name": "featureC-qa",
         "LambdaExecutionRole": "amplifygen1LambdaRole35fab578-qa"
       },
-      "lastPushTimeStamp": "2024-10-17T00:33:26.029Z",
+      "lastPushTimeStamp": "2024-10-17T00:36:59.436Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/featureC-cloudformation-template.json",
         "logicalId": "functionfeatureC"
@@ -76,7 +76,7 @@
         "Name": "featureD-qa",
         "LambdaExecutionRole": "amplifygen1LambdaRolef701f052-qa"
       },
-      "lastPushTimeStamp": "2024-10-17T00:33:26.030Z",
+      "lastPushTimeStamp": "2024-10-17T00:36:59.438Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/featureD-cloudformation-template.json",
         "logicalId": "functionfeatureD"
@@ -102,7 +102,7 @@
         "Name": "newFeat-qa",
         "LambdaExecutionRole": "amplifygen1LambdaRolebdbe24af-qa"
       },
-      "lastPushTimeStamp": "2024-10-17T00:33:26.031Z",
+      "lastPushTimeStamp": "2024-10-17T00:36:59.440Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/newFeat-cloudformation-template.json",
         "logicalId": "functionnewFeat"
@@ -128,7 +128,7 @@
         "Name": "test-qa",
         "LambdaExecutionRole": "amplifygen1LambdaRoled7e46889-qa"
       },
-      "lastPushTimeStamp": "2024-10-17T00:33:26.033Z",
+      "lastPushTimeStamp": "2024-10-17T00:36:59.441Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/test-cloudformation-template.json",
         "logicalId": "functiontest"
@@ -159,7 +159,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/featureX-cloudformation-template.json",
         "logicalId": "functionfeatureX"
       },
-      "lastPushTimeStamp": "2024-10-17T00:33:26.034Z",
+      "lastPushTimeStamp": "2024-10-17T00:36:59.443Z",
       "output": {
         "LambdaExecutionRoleArn": "arn:aws:iam::350141380063:role/amplifygen1LambdaRolea9bda182-qa",
         "Region": "us-west-2",
@@ -185,7 +185,7 @@
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/function/featA-cloudformation-template.json",
         "logicalId": "functionfeatA"
       },
-      "lastPushTimeStamp": "2024-10-17T00:33:26.035Z",
+      "lastPushTimeStamp": "2024-10-17T00:36:59.444Z",
       "output": {
         "LambdaExecutionRoleArn": "arn:aws:iam::350141380063:role/amplifygen1LambdaRole2613df20-qa",
         "Region": "us-west-2",
@@ -194,6 +194,11 @@
         "LambdaExecutionRole": "amplifygen1LambdaRole2613df20-qa"
       },
       "lastPushDirHash": "JlGl0FLYg0WaGKCfAipmhlFyq1Q="
+    },
+    "featB": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "hosting": {
@@ -210,7 +215,7 @@
         "HostingBucketName": "amplifyen1-20241015132641-hostingbucket-qa",
         "CloudFrontDomainName": "d2md5xxn836tu7.cloudfront.net"
       },
-      "lastPushTimeStamp": "2024-10-17T00:33:26.036Z",
+      "lastPushTimeStamp": "2024-10-17T00:36:59.445Z",
       "providerMetadata": {
         "s3TemplateURL": "https://s3.amazonaws.com/amplify-amplifygen1-qa-8e5aa-deployment/amplify-cfn-templates/hosting/template.json",
         "logicalId": "hostingS3AndCloudFront"
