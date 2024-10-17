@@ -10,6 +10,11 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "featB": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "featureC": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -56,6 +61,22 @@
         {
           "category": "function",
           "resourceName": "amplifygen1fc0da326"
+        }
+      ]
+    },
+    "AMPLIFY_function_featA_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "featA"
+        }
+      ]
+    },
+    "AMPLIFY_function_featA_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "featA"
         }
       ]
     },
