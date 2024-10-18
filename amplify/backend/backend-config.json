@@ -25,6 +25,11 @@
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
+    "featE": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
     "featureC": {
       "build": true,
       "providerPlugin": "awscloudformation",
@@ -55,152 +60,6 @@
     "S3AndCloudFront": {
       "providerPlugin": "awscloudformation",
       "service": "S3AndCloudFront"
-    }
-  },
-  "parameters": {
-    "AMPLIFY_function_amplifygen1fc0da326_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "amplifygen1fc0da326"
-        }
-      ]
-    },
-    "AMPLIFY_function_amplifygen1fc0da326_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "amplifygen1fc0da326"
-        }
-      ]
-    },
-    "AMPLIFY_function_featA_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "featA"
-        }
-      ]
-    },
-    "AMPLIFY_function_featA_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "featA"
-        }
-      ]
-    },
-    "AMPLIFY_function_featB_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "featB"
-        }
-      ]
-    },
-    "AMPLIFY_function_featB_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "featB"
-        }
-      ]
-    },
-    "AMPLIFY_function_featC_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "featC"
-        }
-      ]
-    },
-    "AMPLIFY_function_featC_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "featC"
-        }
-      ]
-    },
-    "AMPLIFY_function_featureC_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "featureC"
-        }
-      ]
-    },
-    "AMPLIFY_function_featureC_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "featureC"
-        }
-      ]
-    },
-    "AMPLIFY_function_featureD_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "featureD"
-        }
-      ]
-    },
-    "AMPLIFY_function_featureD_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "featureD"
-        }
-      ]
-    },
-    "AMPLIFY_function_featureX_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "featureX"
-        }
-      ]
-    },
-    "AMPLIFY_function_featureX_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "featureX"
-        }
-      ]
-    },
-    "AMPLIFY_function_newFeat_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "newFeat"
-        }
-      ]
-    },
-    "AMPLIFY_function_newFeat_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "newFeat"
-        }
-      ]
-    },
-    "AMPLIFY_function_test_deploymentBucketName": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "test"
-        }
-      ]
-    },
-    "AMPLIFY_function_test_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "test"
-        }
-      ]
     }
   }
 }
