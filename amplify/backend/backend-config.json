@@ -122,6 +122,22 @@
         }
       ]
     },
+    "AMPLIFY_function_featD_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "featD"
+        }
+      ]
+    },
+    "AMPLIFY_function_featD_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "featD"
+        }
+      ]
+    },
     "AMPLIFY_function_featureC_deploymentBucketName": {
       "usedBy": [
         {
