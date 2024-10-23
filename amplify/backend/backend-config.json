@@ -54,6 +54,11 @@
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
+    },
+    "testLF": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
     }
   },
   "hosting": {
@@ -220,6 +225,22 @@
         {
           "category": "function",
           "resourceName": "newFeat"
+        }
+      ]
+    },
+    "AMPLIFY_function_testLF_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testLF"
+        }
+      ]
+    },
+    "AMPLIFY_function_testLF_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "testLF"
         }
       ]
     },
